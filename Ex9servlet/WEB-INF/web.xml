@@ -1,0 +1,11 @@
+<web-app>
+	<servlet>
+		<servlet-name>CrudSreeram</servlet-name>
+		<servlet-class>crudd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CrudSreeram</servlet-name>
+		<url-pattern>/success_delete</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

@@ -1,0 +1,22 @@
+<web-app>
+	<servlet>
+		<servlet-name>ExamController</servlet-name>
+		<servlet-class>ExamController</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>EvalController</servlet-name>
+		<servlet-class>EvalController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ExamController</servlet-name>
+		<url-pattern>/ExamController</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EvalController</servlet-name>
+		<url-pattern>/EvalController</url-pattern>
+	</servlet-mapping>
+
+</web-app>

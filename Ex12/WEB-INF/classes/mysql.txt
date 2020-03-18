@@ -1,0 +1,6 @@
+create table questions (question varchar(100), op1 varchar(50), op2 varchar(50), op3 varchar(50), op4 varchar(50), answer varchar(50) );
+
+insert into Questions values ("Synonym for power ?","weak","strength","electricity","emotions","strength");
+insert into Questions values ("Which of this is a noun?","Playing","coding","chair","sitting","chair");
+insert into Questions values ("Translate this Japanese text to english : Omaiwa mo shindairu","I am happy","get down!","what!","You are already done!","You are already done!");
+insert into Questions values ("Which of these are not conjuntions?","what","and","but","yet","what");

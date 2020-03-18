@@ -1,0 +1,20 @@
+<class>
+   <student rollno="1">
+      <name>ajay</name>
+      <name>balu</name>
+      <address>chennai</address>
+      <mobile>9897656456</mobile>
+   </student>
+   
+   <student rollno="2">
+      <name>ram</name>
+      <address>kanchi</address>
+      <mobile>9878645345</mobile>
+   </student>
+   
+   <student rollno="3">
+      <name>joseph</name>
+      <address>vellore</address>
+      <mobile>7867654567</mobile>
+   </student>
+</class>
