@@ -27,7 +27,6 @@ public class ServletJava extends HttpServlet{
         }
 
         
-        pw.println("<p>Don't mind me</p>");
         //pw.println("<p>Don't mind me</p>");
         //Displaying Database content
         try{
