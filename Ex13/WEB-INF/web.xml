@@ -1,0 +1,34 @@
+<web-app>
+	<servlet>
+		<servlet-name>Category</servlet-name>
+		<servlet-class>selCat</servlet-class>
+		<init-param>
+			<param-name>User1</param-name>
+			<param-value>Shankar</param-value>
+		</init-param>
+		<init-param>
+			<param-name>User2</param-name>
+			<param-value>Sanjay</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Category</servlet-name>
+		<url-pattern>/cat</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Items</servlet-name>
+		<servlet-class>itemList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Items</servlet-name>
+		<url-pattern>/itemlist</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Bill</servlet-name>
+		<servlet-class>genBill</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Bill</servlet-name>
+		<url-pattern>/billgen</url-pattern>
+	</servlet-mapping>
+</web-app>
