@@ -1,54 +1,52 @@
-import javax.servlet.*;
-import javax.servlet.http.*;
 import java.io.*;
+import javax.servlet.http.*;
+import javax.servlet.*;
 import java.sql.*;
-
-public class StudMark extends HttpServlet{
-
-    Connection con ;
-    PrintWriter pw;
-    PreparedStatement ps;
-    Statement st;
-    ResultSet rs;
-    public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException,IOException{
-
-        
-        //setting up database connectivity
-        res.setContentType("text/html");
-        final String DBURL = "jdbc:mysql://localhost:3306/StudTable"; 
-        final String user = "root";
-        final String pass = "thenextgenius";
-        pw = res.getWriter();
-        pw.println("<html><body>");
-        try{
-            con = DriverManager.getConnection(DBURL,user,pass);
-        } catch (Exception e){
-            pw.println("<p>Don't mind me</p>");
-        }
-
-        
-        pw.println("<p>Don't mind me</p>");
-        //pw.println("<p>Don't mind me</p>");
-        //Displaying Database content
-        String id = req.getParameter("name");
-        try{
-            String sql = "select * from student where rno = "+id+";";
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            pw.println("<table border='1'>");
-            pw.println("<tr> <th>Name</th> <th>ID</th> </tr>");
-
-            while(rs.next()){
-                pw.println("<tr>");
-                pw.println("<td>"+rs.getString("name") + "</td>");
-                pw.println("<td>"+rs.getString("rno") + "</td>");
-                pw.println("</tr>");
-            }
-            pw.println("</table>");
-        } catch (Exception e) {
-
-        }
-
-        pw.println("</body></html>");
-    }
+public class StudMark extends HttpServlet
+{
+	public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException,ServletException
+	{
+		res.setContentType("text/html");
+		PrintWriter pw = res.getWriter();
+		try
+		{
+			Connection con;
+			Class.forName("com.mysql.jdbc.Driver");
+			//pw.println("Driver Loaded <br><br>");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/studmark","root","Chennai_5");
+			//pw.println("After Connection <br><br>");
+			String rollno=req.getParameter("regno");
+			String sql="Select sub1,m1,sub2,m2,sub3,m3 from Marks where regno="+rollno+";";
+			String sql1 = "select * from Mapping";
+			Statement stmt=con.createStatement();
+			//pw.println("After createStatement <br><br>");
+			ResultSet rs=stmt.executeQuery(sql);
+			
+			String n1 = "select subname from Mapping ;";
+			//pw.println("After executeQuery <br><br><br>");
+			while(rs.next())
+			{
+				pw.println("Regno : "+rollno+"<br>");
+				String s1=rs.getString("sub1");
+				String s2=rs.getString("sub2");
+				String s3=rs.getString("sub3");
+				int m1=rs.getInt("m1");
+				int m2=rs.getInt("m2");
+				int m3=rs.getInt("m3");
+				pw.println(s1+" "+m1+" "+"Maths"+"<br>");
+				pw.println(s2+" "+m2+" "+"Science"+"<br>");
+				pw.println(s3+" "+m3+" "+"English"+"<br>");
+			}
+			//pw.println("After Display");
+		}
+		catch(SQLException e)
+		{
+			pw.println("SQLException");
+		}
+		catch(ClassNotFoundException e)
+		{
+			pw.println("Driver not loaded");
+		}
+		pw.close();
+	}
 }

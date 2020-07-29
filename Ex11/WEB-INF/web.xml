@@ -1,13 +1,11 @@
 <web-app>
-
 <servlet>
-<servlet-name>sonoojaiswal</servlet-name>
-<servlet-class>StudMark</servlet-class>
+	<servlet-name>studMark</servlet-name>
+	<servlet-class>StudMark</servlet-class>
 </servlet>
 
 <servlet-mapping>
-<servlet-name>sonoojaiswal</servlet-name>
-<url-pattern>/welcome</url-pattern>
+	<servlet-name>studMark</servlet-name>
+	<url-pattern>/marklist</url-pattern>
 </servlet-mapping>
-
 </web-app>
